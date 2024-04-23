@@ -1,0 +1,75 @@
+bios design
+abi-application binary interface
+codes are written  in rom
+lisp
+no op => nop => no operation
+most things are optional if written in [   ]
+
+template of an instruction:
+[label:] mnemonic [opnd1 [,opnd2]] [;commment]
+
+interrupts/system calls
+
+TASM => MASM => NASM => YASM
+
+MASM => microsoft
+NASM => open source / good for teaching
+
+template of an assembly program :
+ ____________________
+|DATA : init/uninit  | => section
+|--------------------|
+|CODE/TEXT           | => segment
+|--------------------|
+|                    |
+|--------------------|
+|                    |
+|____________________|
+
+linker links codes written in different forms 
+
+ld => linker
+gcc implies ld
+
+.rodata
+
+db byte //8
+dw word //16
+dd double //32
+dq quad //64
+dt ten
+
+msg dd ___ => fit it in double
+
+.bss => uninitialised
+
+msg (resd,resw,resd)  ____ => how many to reserve
+
+c=c+d
+
+mov ebx , c
+mov edx , d
+add ebx , edx
+
+data 
+bss
+text
+main
+
+8  => ah al bh bl ch cl dh dl sp bp
+16 => ax bx cx dx sp bp si di [si di added for string instructions]
+32 => eax ecx edx ebx esp ebp esi edi [e added for extended]
+64 => rax rcx rdx rbx rsp rbp rsi rdi 
+
+reg ,reg   => eax , ecx
+reg , imm  => eax , a
+reg , mem  => eax , [a] => may require typecasting
+
+section .data
+a dd 10
+b dd 20
+section .bss
+c resb 10
+d resd 10
+section .rodata
+
